@@ -1,0 +1,17 @@
+{% if sameip %}
+<div class="alert alert-danger" role="alert">
+	{{ 'akravets.questions::lang.result.sameip'|trans }}
+</div>
+{% elseif saved %}
+<div class="alert alert-primary" role="alert">
+	{{ 'akravets.questions::lang.result.saved'|trans }}
+</div>
+{% elseif invalid %}
+<div class="alert alert-danger" role="alert">
+	{{ 'akravets.questions::lang.result.invalid'|trans }}
+</div>
+{% else %}
+<div class="alert alert-warning" role="alert">
+	{{ 'akravets.questions::lang.result.savingerror'|trans }}
+</div>
+{% endif %}

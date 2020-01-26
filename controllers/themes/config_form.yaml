@@ -1,0 +1,10 @@
+name: Themes
+form: $/akravets/survey/models/theme/fields.yaml
+modelClass: Akravets\Survey\Models\Theme
+defaultRedirect: akravets/survey/themes
+create:
+    redirect: 'akravets/survey/themes/update/:id'
+    redirectClose: akravets/survey/themes
+update:
+    redirect: akravets/survey/themes
+    redirectClose: akravets/survey/themes

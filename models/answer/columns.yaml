@@ -1,0 +1,18 @@
+columns:
+    theme_name:
+        label: Theme
+        type: text
+        searchable: true
+    ip:
+        label: ip
+        type: text
+        width: 120px
+    created_at:
+        label: created
+        type: datetime
+        width: 100px
+        format: 'Y-m-d H:i:s'
+    answers:
+        label: 'questions and  answers'
+        type: partial
+        searchable: false

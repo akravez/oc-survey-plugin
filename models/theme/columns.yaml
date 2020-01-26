@@ -1,0 +1,17 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: Title
+        type: text
+        searchable: true
+    active:
+        label: 'Active ?'
+        type: partial
+    send_result:
+        label: 'Send Result ?'
+        type: switch
+    email:
+        label: email
+        type: text

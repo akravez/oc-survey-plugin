@@ -1,0 +1,82 @@
+{% set qnas = __SELF__.qna %}
+	<div id="survey-result">
+	</div>
+{% if qnas is not empty %}
+	<div class="container survey-container" id="survey-container">
+		<div class="row justify-content-center">
+			<h2>{{ qnas.0.theme.title }}</h2>
+		</div>
+        <form data-request="{{ __SELF__ }}::onSubmitHandler"
+			data-request-success="$('#survey-container').remove()"
+		>
+{#			data-request-update="'{{ __SELF__ }}::result': '#result'" #}
+		{{ form_token() }}
+		{% for qna in qnas %}
+			{% set idx = loop.index0 %}
+			<div class="row survey-row">
+				<div class="col-6 survey-question">
+					<h5>{{ qna.question }}</h5>
+					<input type="hidden" value="{{ qna.question }}" name="q[{{ idx }}]">
+				</div>
+				<div class="col-6 survey-answer">
+					{% set answers = qna.answer|split(',') %}
+					{% if qna.input_type == 'radio' %}
+						{% for answer in answers %}
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="a[{{ idx }}]" id="a-{{ idx }}-{{ loop.index0 }}" value="{{ answer|trim }}">
+						<label class="form-check-label" for="a-{{ idx }}-{{ loop.index0 }}">
+							{{ answer|trim }}
+						</label>
+					</div>
+						{% endfor %}
+
+					{% elseif qna.input_type == 'checkbox' %}
+						{% for answer in answers %}
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" name="a[{{ idx }}][]"
+							id="a-{{ idx }}-{{ loop.index0 }}"
+							value="{{ answer|trim }}"
+						>
+						<label class="form-check-label" for="a-{{ idx }}-{{ loop.index0 }}">
+							{{ answer|trim }}
+						</label>
+					</div>
+						{% endfor %}
+					
+					{% elseif qna.input_type == 'select' %}
+					<div class="form-group">
+						<select class="form-control" name="a[{{ idx }}]">
+						{% for answer in answers %}
+							<option>{{ answer|trim }}</option>
+						{% endfor %}
+						</select>
+					</div>
+					{% elseif qna.input_type == 'text' %}
+					<div class="form-group">
+						<input type="text" name="a[{{ idx }}]"> 
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		{% endfor %}
+			<div class="row">
+				<div class="col text-center">
+					<button type="submit" class="btn btn-primary">
+						<span>&#9989;</span>&nbsp;
+						{{ 'akravets.questions::lang.showqna.sendresult'|trans }}
+					</button>
+				</div>
+			</div>
+        </form>
+	</div>
+{% else %}
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="alert alert-danger text-center" role="alert">
+					{{ 'akravets.questions::lang.showqna.notexists'|trans }}
+				</div>
+			</div>
+		</div>
+	</div>
+{%endif%}

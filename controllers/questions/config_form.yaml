@@ -1,0 +1,10 @@
+name: Questions
+form: $/akravets/survey/models/question/fields.yaml
+modelClass: Akravets\Survey\Models\Question
+defaultRedirect: akravets/survey/questions
+create:
+    redirect: 'akravets/survey/questions/update/:id'
+    redirectClose: akravets/survey/questions
+update:
+    redirect: akravets/survey/questions
+    redirectClose: akravets/survey/questions

@@ -1,0 +1,21 @@
+fields:
+    active:
+        label: Active
+        span: full
+        type: switch
+    title:
+        label: Title
+        span: left
+        required: 1
+        type: text
+    send_result:
+        label: 'Send result'
+        span: left
+        type: checkbox
+    email:
+        label: 'Email address for sending result to'
+        span: left
+        dependsOn: {  }
+        attributes: {  }
+        type: text
+        comment: 'comma separated email addresses'

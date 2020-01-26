@@ -1,0 +1,24 @@
+plugin:
+    name: 'akravets.survey::lang.plugin.name'
+    description: 'akravets.survey::lang.plugin.description'
+    author: AKravets
+    icon: oc-icon-pencil-square-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Survey
+        url: akravets/survey/themes
+        icon: icon-pencil-square-o
+        sideMenu:
+            side-menu-item3:
+                label: Themes
+                url: akravets/survey/themes
+                icon: icon-pencil-square-o
+            side-menu-item:
+                label: Questions
+                url: akravets/survey/questions
+                icon: icon-question
+            side-menu-item2:
+                label: Answers
+                url: akravets/survey/answers
+                icon: icon-check-square-o

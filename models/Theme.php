@@ -1,0 +1,37 @@
+<?php namespace Akravets\Survey\Models;
+
+use Model;
+
+/**
+ * Model
+ */
+class Theme extends Model
+{
+    use \October\Rain\Database\Traits\Validation;
+    
+    /*
+     * Disable timestamps by default.
+     * Remove this line if timestamps are defined in the database table.
+     */
+    public $timestamps = false;
+
+
+    /**
+     * @var string The database table used by the model.
+     */
+    public $table = 'akravets_survey_themes';
+
+    /**
+     * @var array Validation rules
+     */
+    public $rules = [
+        'title' => 'required',
+    ];
+
+    /**
+     * Define relationship
+     */
+    public $hasMany = [
+        'questions' => 'Akravets\Survey\Models\Question',
+    ];
+}

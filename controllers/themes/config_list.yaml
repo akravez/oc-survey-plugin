@@ -1,0 +1,12 @@
+list: $/akravets/survey/models/theme/columns.yaml
+modelClass: Akravets\Survey\Models\Theme
+title: Themes
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'akravets/survey/themes/update/:id'

@@ -1,0 +1,13 @@
+<?php
+// @var $value
+// @return echo
+$lines = '';
+foreach ($value as $val) {
+	if (isset($val['answer'])) {
+		$answer = is_array($val['answer']) ? implode(',', $val['answer']) : $val['answer'];
+	} else {
+		$answer = 'n/a';
+	}
+	$lines .= '<b>' . $val['question'] . '</b> - ' . $answer . '<br>';
+}
+echo $lines;

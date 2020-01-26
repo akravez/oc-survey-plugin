@@ -1,0 +1,41 @@
+fields:
+    theme_id:
+        label: Theme
+        showSearch: true
+        span: auto
+        context:
+            - create
+            - preview
+        type: dropdown
+    input_type:
+        label: 'Input type'
+        options:
+            checkbox: 'check boxes'
+            radio: 'radio buttons'
+            select: 'drop-down selector'
+            text: text
+        span: left
+        required: 1
+        type: radio
+    question:
+        label: 'Question text'
+        span: left
+        placeholder: 'enter question text here'
+        required: 1
+        type: text
+    answer:
+        label: 'Possible answers'
+        span: auto
+        placeholder: 'enter list of possible answers'
+        required: 1
+        trigger:
+            action: hide
+            field: input_type
+            condition: 'value[text]'
+        type: text
+        comment: 'comma separated values'
+    active:
+        label: 'Active?'
+        span: left
+        type: switch
+        comment: 'inactive question will be skipped'

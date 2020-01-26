@@ -1,0 +1,25 @@
+columns:
+    theme_name:
+        label: Theme
+        type: text
+        searchable: true
+        select: title
+        relation: theme
+    question:
+        label: Question
+        type: text
+        searchable: true
+    answer:
+        label: Answers
+        type: text
+        searchable: true
+    input_type:
+        label: Type
+        type: text
+        searchable: true
+    active:
+        label: 'Active?'
+        type: partial
+    sort_order:
+        label: Order
+        type: number

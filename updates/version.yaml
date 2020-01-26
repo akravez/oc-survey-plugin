@@ -1,0 +1,26 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table akravets_survey_themes'
+    - builder_table_create_akravets_survey_themes.php
+1.0.3:
+    - 'Created table akravets_survey_questions'
+    - builder_table_create_akravets_survey_questions.php
+1.0.4:
+    - 'Created table akravets_survey_answers'
+    - builder_table_create_akravets_survey_answers.php
+1.0.5:
+    - 'Updated table akravets_survey_questions'
+    - builder_table_update_akravets_survey_questions.php
+1.0.6:
+    - 'Updated table akravets_survey_questions'
+    - builder_table_update_akravets_survey_questions_2.php
+1.0.7:
+    - 'Updated table akravets_survey_themes'
+    - builder_table_update_akravets_survey_themes.php
+1.0.8:
+    - 'Updated table akravets_survey_questions'
+    - builder_table_update_akravets_survey_questions_3.php
+1.0.9:
+    - 'Updated table akravets_survey_questions'
+    - builder_table_update_akravets_survey_questions_4.php
